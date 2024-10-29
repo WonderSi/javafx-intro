@@ -14,4 +14,6 @@ module org.example.javafxintro {
 
     opens org.example.javafxintro to javafx.fxml;
     exports org.example.javafxintro;
+    exports org.example.javafxintro.calculator;
+    opens org.example.javafxintro.calculator to javafx.fxml;
 }
