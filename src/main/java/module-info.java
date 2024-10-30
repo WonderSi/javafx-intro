@@ -18,4 +18,6 @@ module org.example.javafxintro {
     opens org.example.javafxintro.calculator to javafx.fxml;
     exports org.example.javafxintro.textflag;
     opens org.example.javafxintro.textflag to javafx.fxml;
+    exports org.example.javafxintro.shiftingwords;
+    opens org.example.javafxintro.shiftingwords to javafx.fxml;
 }
