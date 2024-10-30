@@ -20,4 +20,6 @@ module org.example.javafxintro {
     opens org.example.javafxintro.textflag to javafx.fxml;
     exports org.example.javafxintro.shiftingwords;
     opens org.example.javafxintro.shiftingwords to javafx.fxml;
+    exports org.example.javafxintro.showhidewidget;
+    opens org.example.javafxintro.showhidewidget to javafx.fxml;
 }
