@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox alignment="CENTER" prefHeight="269.0" prefWidth="500.0" spacing="10.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javafxintro.restaurantorder.RestaurantOrderController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="230.0" spacing="10.0">
+         <children>
+            <Label text="Меню">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <ListView fx:id="dishList" prefHeight="216.0" prefWidth="209.0" />
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="230.0" spacing="10.0">
+         <children>
+            <Label text="Количество">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="230.0" spacing="37.0">
+               <children>
+                  <Spinner fx:id="quantitySpinner" prefHeight="20.0" prefWidth="124.0" />
+                  <Button fx:id="addButton" mnemonicParsing="false" text="Добавить" />
+               </children>
+            </HBox>
+            <Label text="Заказ" />
+            <TextArea fx:id="orderTextArea" editable="false" prefHeight="114.0" prefWidth="220.0" />
+            <Button fx:id="orderButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="230.0" text="Оформить заказ" />
+         </children>
+      </VBox>
+   </children>
+</HBox>

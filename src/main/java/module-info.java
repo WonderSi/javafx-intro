@@ -22,4 +22,6 @@ module org.example.javafxintro {
     opens org.example.javafxintro.shiftingwords to javafx.fxml;
     exports org.example.javafxintro.showhidewidget;
     opens org.example.javafxintro.showhidewidget to javafx.fxml;
+    exports org.example.javafxintro.restaurantorder;
+    opens org.example.javafxintro.restaurantorder to javafx.fxml;
 }
