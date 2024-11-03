@@ -30,10 +30,10 @@
              <Label text="Цвет флага №2" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
              <Label text="Цвет флага №3" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
 
-             <RadioButton onAction="#checkButton" fx:id="Num1Red" mnemonicParsing="false" prefWidth="80.0" text="Красный" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-             <RadioButton onAction="#checkButton" fx:id="Num1Green" mnemonicParsing="false" prefWidth="80.0" text="Зелёный" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-             <RadioButton onAction="#checkButton" fx:id="Num1White" mnemonicParsing="false" prefWidth="80.0" text="Белый" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-             <RadioButton onAction="#checkButton" fx:id="Num1Blue" mnemonicParsing="false" prefWidth="80.0" text="Синий" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+             <RadioButton fx:id="Num1Red" mnemonicParsing="false" prefWidth="80.0" text="Красный" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+             <RadioButton fx:id="Num1Green" mnemonicParsing="false" prefWidth="80.0" text="Зелёный" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+             <RadioButton fx:id="Num1White" mnemonicParsing="false" prefWidth="80.0" text="Белый" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+             <RadioButton fx:id="Num1Blue" mnemonicParsing="false" prefWidth="80.0" text="Синий" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
 
              <RadioButton fx:id="Num2Red" mnemonicParsing="false" prefWidth="80.0" text="Красный" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
              <RadioButton fx:id="Num2Green" mnemonicParsing="false" prefWidth="80.0" text="Зелёный" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />

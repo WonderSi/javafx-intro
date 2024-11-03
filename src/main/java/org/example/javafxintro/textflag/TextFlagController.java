@@ -3,6 +3,7 @@ package org.example.javafxintro.textflag;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 
 public class TextFlagController {
     @FXML private RadioButton Num1Red;
@@ -23,109 +24,57 @@ public class TextFlagController {
     @FXML private Label resultLabel;
 
     @FXML
-    public void checkButton() {
-        Num1Red.setOnAction(e ->{
-            if(Num1Red.isSelected()) {
-                Num1White.setSelected(false);
-                Num1Green.setSelected(false);
-                Num1Blue.setSelected(false);
-            }});
-        Num1White.setOnAction(e ->{
-            if(Num1White.isSelected()) {
-                Num1Red.setSelected(false);
-                Num1Green.setSelected(false);
-                Num1Blue.setSelected(false);
-            }});
-        Num1Green.setOnAction(e ->{
-            if(Num1Green.isSelected()) {
-                Num1White.setSelected(false);
-                Num1Red.setSelected(false);
-                Num1Blue.setSelected(false);
-            }});
-        Num1Blue.setOnAction(e ->{
-            if(Num1Blue.isSelected()) {
-                Num1White.setSelected(false);
-                Num1Green.setSelected(false);
-                Num1Red.setSelected(false);
-            }});
+    public void initialize() {
+        // Создаем ToggleGroup для каждой группы радиокнопок
+        ToggleGroup group1 = new ToggleGroup();
+        ToggleGroup group2 = new ToggleGroup();
+        ToggleGroup group3 = new ToggleGroup();
 
-        Num2Red.setOnAction(e ->{
-            if(Num2Red.isSelected()) {
-                Num2White.setSelected(false);
-                Num2Green.setSelected(false);
-                Num2Blue.setSelected(false);
-            }});
-        Num2White.setOnAction(e ->{
-            if(Num2White.isSelected()) {
-                Num2Red.setSelected(false);
-                Num2Green.setSelected(false);
-                Num2Blue.setSelected(false);
-            }});
-        Num2Green.setOnAction(e ->{
-            if(Num2Green.isSelected()) {
-                Num2White.setSelected(false);
-                Num2Red.setSelected(false);
-                Num2Blue.setSelected(false);
-            }});
-        Num2Blue.setOnAction(e ->{
-            if(Num2Blue.isSelected()) {
-                Num2White.setSelected(false);
-                Num2Green.setSelected(false);
-                Num2Red.setSelected(false);
-            }});
+        // Присоединяем радиокнопки к их группе
+        Num1Red.setToggleGroup(group1);
+        Num1Green.setToggleGroup(group1);
+        Num1White.setToggleGroup(group1);
+        Num1Blue.setToggleGroup(group1);
 
-        Num3Red.setOnAction(e ->{
-            if(Num3Red.isSelected()) {
-                Num3White.setSelected(false);
-                Num3Green.setSelected(false);
-                Num3Blue.setSelected(false);
-            }});
-        Num3White.setOnAction(e ->{
-            if(Num3White.isSelected()) {
-                Num3Red.setSelected(false);
-                Num3Green.setSelected(false);
-                Num3Blue.setSelected(false);
-            }});
-        Num3Green.setOnAction(e ->{
-            if(Num3Green.isSelected()) {
-                Num3White.setSelected(false);
-                Num3Red.setSelected(false);
-                Num3Blue.setSelected(false);
-            }});
-        Num3Blue.setOnAction(e ->{
-            if(Num3Blue.isSelected()) {
-                Num3White.setSelected(false);
-                Num3Green.setSelected(false);
-                Num3Red.setSelected(false);
-            }});
+        Num2Red.setToggleGroup(group2);
+        Num2Green.setToggleGroup(group2);
+        Num2White.setToggleGroup(group2);
+        Num2Blue.setToggleGroup(group2);
+
+        Num3Red.setToggleGroup(group3);
+        Num3Green.setToggleGroup(group3);
+        Num3White.setToggleGroup(group3);
+        Num3Blue.setToggleGroup(group3);
     }
 
     @FXML
     public void handleDraw() {
+
         StringBuilder result = new StringBuilder();
 
-        if (Num1Red.isSelected()) result.append("Красный, ");
-        else if (Num1Green.isSelected()) result.append("Зелёный, ");
-        else if (Num1White.isSelected()) result.append("Белый, ");
-        else if (Num1Blue.isSelected()) result.append("Синий, ");
-
-        if (Num2Red.isSelected()) result.append("Красный, ");
-        else if (Num2Green.isSelected()) result.append("Зелёный, ");
-        else if (Num2White.isSelected()) result.append("Белый, ");
-        else if (Num2Blue.isSelected()) result.append("Синий, ");
-
-        if (Num3Red.isSelected()) result.append("Красный, ");
-        else if (Num3Green.isSelected()) result.append("Зелёный, ");
-        else if (Num3White.isSelected()) result.append("Белый, ");
-        else if (Num3Blue.isSelected()) result.append("Синий, ");
-
-        if (result.length() > 0) {
-            result.delete(result.length() - 2, result.length()); // Удаляем последнюю запятую и пробел
-        } else {
-            result.append("Выберите цвета");
-        }
+        // Получаем выбранные цвета из каждой группы
+        result.append(getSelectedColor(Num1Red, Num1Green, Num1White, Num1Blue)).append(", ");
+        result.append(getSelectedColor(Num2Red, Num2Green, Num2White, Num2Blue)).append(", ");
+        result.append(getSelectedColor(Num3Red, Num3Green, Num3White, Num3Blue));
 
         resultLabel.setText(result.toString());
+    }
 
+    private String getSelectedColor(RadioButton... buttons) {
+        for (RadioButton button : buttons) {
+            if (button.isSelected()) {
+                switch (button.getText()) {
+                    case "Красный":
+                        return "Красный";
+                    case "Зелёный":
+                        return "Зелёный";
+                    case "Белый":
+                        return "Белый";
+                    case "Синий":
+                        return "Синий";
+                }
+            }
+        }
+        return "Не выбрано";
     }
 }
